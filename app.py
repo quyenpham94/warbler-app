@@ -235,7 +235,7 @@ def add_like(message_id):
 
     user_likes = g.user.likes
 
-    if like_message in user_likes:
+    if liked_message in user_likes:
         g.user.likes = [like for like in user_likes if like != liked_message]
     else:
         g.user.likes.append(liked_message)
@@ -376,7 +376,7 @@ def page_not_found(e):
     """404 NOT FOUND page."""
 
     return render_template('404.html'), 404
-    
+
 ##############################################################################
 # Turn off all caching in Flask
 #   (useful for dev; in production, this kind of stuff is typically
